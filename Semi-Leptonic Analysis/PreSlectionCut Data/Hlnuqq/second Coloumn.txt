@@ -1,0 +1,78 @@
+###################################################################################################
+d23Value: [0, 20]
+d34Value: [0, 10]
+IMValue: [0, 125]
+METValue: [10, 125]
+pIsoLepValue: [10, 125]
+j1e: [0, 125]
+j2e: [0, 125]
+Efficiency for  wzp6_ee_Hlnuqq_ecm125.root  is: 0.6840062575383036
+Efficiency for  wzp6_ee_Hqqlnu_ecm125.root  is: 0.5443301517404473
+Efficiency for  wzp6_ee_qq_ecm125.root  is: 0.11038732394366198
+Efficiency for  wzp6_ee_eenunu_ecm125.root  is: 0.060500668832409704
+Efficiency for  wzp6_ee_enueqq_ecm125.root  is: 0.5927926912592363
+Efficiency for  wzp6_ee_Hgg_ecm125.root  is: 0.012254335260115608
+Efficiency for  wzp6_ee_Hllnunu_ecm125.root  is: 0.3289420309451602
+Efficiency for  wzp6_ee_l1l2nunu_ecm125.root  is: 0.3280377880570734
+Efficiency for  wzp6_ee_mumununu_ecm125.root  is: 0.031805425631431246
+Efficiency for  wzp6_ee_munumuqq_ecm125.root  is: 0.8130093953737004
+Efficiency for  wzp6_ee_taunutauqq_ecm125.root  is: 0.40996915358801395
+Efficiency for  wzp6_ee_tautaununu_ecm125.root  is: 0.08552378715408268
+###################################################################################################
+Significance Hlnuqq = 0.01565181942622901
+Significance Hqqlnu = 0.008659734958400644
+###################################################################################################
+[hfatehi@lxplus928 treemaker]$ rm sig.py 
+[hfatehi@lxplus928 treemaker]$ vim sig.py
+[hfatehi@lxplus928 treemaker]$ python sig.py 
+###################################################################################################
+d23Value: [0, 20]
+d34Value: [0, 10]
+IMValue: [0, 125]
+METValue: [27, 125]
+pIsoLepValue: [10, 125]
+j1e: [0, 125]
+j2e: [0, 125]
+Efficiency for  wzp6_ee_Hlnuqq_ecm125.root  is: 0.6828705859874132
+Efficiency for  wzp6_ee_Hqqlnu_ecm125.root  is: 0.16640864802051916
+Efficiency for  wzp6_ee_qq_ecm125.root  is: 0.09665492957746478
+Efficiency for  wzp6_ee_eenunu_ecm125.root  is: 0.060500668832409704
+Efficiency for  wzp6_ee_enueqq_ecm125.root  is: 0.45257278099840104
+Efficiency for  wzp6_ee_Hgg_ecm125.root  is: 0.0016184971098265897
+Efficiency for  wzp6_ee_Hllnunu_ecm125.root  is: 0.3289420309451602
+Efficiency for  wzp6_ee_l1l2nunu_ecm125.root  is: 0.3279818885643613
+Efficiency for  wzp6_ee_mumununu_ecm125.root  is: 0.031805425631431246
+Efficiency for  wzp6_ee_munumuqq_ecm125.root  is: 0.5234478348687794
+Efficiency for  wzp6_ee_taunutauqq_ecm125.root  is: 0.3755889630859971
+Efficiency for  wzp6_ee_tautaununu_ecm125.root  is: 0.08552378715408268
+###################################################################################################
+Significance Hlnuqq = 0.01669853060859894
+Significance Hqqlnu = 0.002829131911511293
+###################################################################################################
+[hfatehi@lxplus928 treemaker]$ rm sig.py 
+[hfatehi@lxplus928 treemaker]$ vim sig.py
+[hfatehi@lxplus928 treemaker]$ python sig.py 
+###################################################################################################
+d23Value: [0, 20]
+d34Value: [0, 10]
+IMValue: [0, 125]
+METValue: [30, 125]
+pIsoLepValue: [10, 125]
+j1e: [0, 125]
+j2e: [0, 125]
+Efficiency for  wzp6_ee_Hlnuqq_ecm125.root  is: 0.6669556598478606
+Efficiency for  wzp6_ee_Hqqlnu_ecm125.root  is: 0.1033132142497646
+Efficiency for  wzp6_ee_qq_ecm125.root  is: 0.08943661971830986
+Efficiency for  wzp6_ee_eenunu_ecm125.root  is: 0.060500668832409704
+Efficiency for  wzp6_ee_enueqq_ecm125.root  is: 0.3826523065219382
+Efficiency for  wzp6_ee_Hgg_ecm125.root  is: 0.0013872832369942196
+Efficiency for  wzp6_ee_Hllnunu_ecm125.root  is: 0.3289388115152569
+Efficiency for  wzp6_ee_l1l2nunu_ecm125.root  is: 0.32795673379264084
+Efficiency for  wzp6_ee_mumununu_ecm125.root  is: 0.031805425631431246
+Efficiency for  wzp6_ee_munumuqq_ecm125.root  is: 0.4627573972638272
+Efficiency for  wzp6_ee_taunutauqq_ecm125.root  is: 0.3533142944306973
+Efficiency for  wzp6_ee_tautaununu_ecm125.root  is: 0.08552378715408268
+###################################################################################################
+Significance Hlnuqq = 0.01695425673514514
+Significance Hqqlnu = 0.001825892147379521
+###################################################################################################

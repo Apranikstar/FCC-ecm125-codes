@@ -1,0 +1,22 @@
+###################################################################################################
+d23Value: [0, 60]
+d34Value: [0, 40]
+IMValue: [0, 125]
+METValue: [2, 125]
+pIsoLepValue: [0, 125]
+Efficiency for  wzp6_ee_Hlnuqq_ecm125.root  is: 0.7071555667012981
+Efficiency for  wzp6_ee_Hqqlnu_ecm125.root  is: 0.7184627949853917
+Efficiency for  wzp6_ee_qq_ecm125.root  is: 0.5542253521126761
+Efficiency for  wzp6_ee_eenunu_ecm125.root  is: 0.09784062679151538
+Efficiency for  wzp6_ee_enueqq_ecm125.root  is: 0.9028450273655145
+Efficiency for  wzp6_ee_Hgg_ecm125.root  is: 0.5586127167630058
+Efficiency for  wzp6_ee_Hllnunu_ecm125.root  is: 0.35257264643576913
+Efficiency for  wzp6_ee_l1l2nunu_ecm125.root  is: 0.39690037312911386
+Efficiency for  wzp6_ee_mumununu_ecm125.root  is: 0.05134601392786613
+Efficiency for  wzp6_ee_munumuqq_ecm125.root  is: 0.9178877494747455
+Efficiency for  wzp6_ee_taunutauqq_ecm125.root  is: 0.693417172299244
+Efficiency for  wzp6_ee_tautaununu_ecm125.root  is: 0.3308101298257602
+###################################################################################################
+Significance Hlnuqq = 0.007224580330932112
+Significance Hqqlnu = 0.0051031625013875604
+###################################################################################################
