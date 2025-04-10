@@ -1,9 +1,0 @@
-###################################################################################################
-Sig(d23Value=15, d34Value=7.5, nIsoLepValue=1,nIsoPhoton=0, IMValue=45, METValue=5, pIsoLepValue=7.5)
-Significance Hlnuqq = 1.0274689824865434e-06
-Significance Hqqlnu = 0.011090789015237789
-###################################################################################################
-Sig(d23Value=15, d34Value=7.5, nIsoLepValue=1,nIsoPhoton=0, IMValue=45, METValue=10, pIsoLepValue=7.5)
-Significance Hlnuqq = 1.0289531851568548e-06
-Significance Hqqlnu = 0.010495827284029969
-###################################################################################################
