@@ -8,7 +8,7 @@ import os, copy
 print("Missing_Pt > 3")
 print("Jets_InMa > 10")
 print("Iso_Electrons_No == 1")
-print(("Jets_InMa < 43"))
+#print(("Jets_InMa < 43")) at the end of the file uncomment this cut so you get your desired files. I've removed this to plot the initial events
 
 
 
@@ -351,7 +351,7 @@ class RDFanalysis:
         df = df.Filter("Missing_Pt > 3")
         df = df.Filter("Jets_InMa > 10")
         df = df.Filter("Iso_Electrons_No == 1")
-        df = df.Filter("Jets_InMa < 43")
+        #df = df.Filter("Jets_InMa < 43")
 
         #-------------------------------------------------------------------
         
