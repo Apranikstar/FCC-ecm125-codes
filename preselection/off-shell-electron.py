@@ -5,10 +5,11 @@ import os, copy
 # We consider two levels in the first step: level 0 (for checking the plots), and level 1 (for the event pre-selection)
 # --------------------------------------------------------------------------------------------------
 
-print("Missing_Pt > 3")
-print("Jets_InMa > 10")
-print("Iso_Electrons_No == 1")
-print(("Jets_InMa < 43"))
+#print("Missing_Pt > 3")
+#print("Jets_InMa > 10")
+#print("Iso_Electrons_No == 1")
+#print(("Jets_InMa > 43")) 
+#at the end of the file uncomment these cuts so you get your desired files. I've removed this to plot the initial events
 
 
 
@@ -348,10 +349,10 @@ class RDFanalysis:
 
 
         # Preselection cuts
-        df = df.Filter("Missing_Pt > 3")
-        df = df.Filter("Jets_InMa > 10")
-        df = df.Filter("Iso_Electrons_No == 1")
-        df = df.Filter("Jets_InMa > 43")
+        #df = df.Filter("Missing_Pt > 3")
+        #df = df.Filter("Jets_InMa > 10")
+        #df = df.Filter("Iso_Electrons_No == 1")
+        #df = df.Filter("Jets_InMa > 43")
 
         #-------------------------------------------------------------------
         
