@@ -18,32 +18,32 @@ processList = {
     
     #xsecs need to be scaled by 280/989 ...for xsec of ee -> H ...
 
-    # # Semileptonic processes
-    # "wzp6_ee_Hlnuqq_ecm125":    {"fraction":1, "crossSection": 4.58e-5 * (26.248/45.8),},
-    # "wzp6_ee_Hqqlnu_ecm125":    {"fraction":1, "crossSection": 3.187e-5 * (26.248/31.87),},
+    # Semileptonic processes
+    "wzp6_ee_Hlnuqq_ecm125":    {"fraction":1, "crossSection": 4.58e-5 * (26.248/45.8),},
+    "wzp6_ee_Hqqlnu_ecm125":    {"fraction":1, "crossSection": 3.187e-5 * (26.248/31.87),},
 
-    # "wzp6_ee_enueqq_ecm125":    {"fraction":1, "crossSection": 0.01382,},
-    # "wzp6_ee_eeqq_ecm125" :     {"fraction":1, "crossSection" : 0.5065 },
+    "wzp6_ee_enueqq_ecm125":    {"fraction":1, "crossSection": 0.01382,},
+    "wzp6_ee_eeqq_ecm125" :     {"fraction":1, "crossSection" : 0.5065 },
 
-    # "wzp6_ee_munumuqq_ecm125":  {"fraction":1, "crossSection": 0.006711,},
-    # "wzp6_ee_mumuqq_ecm125":  {"fraction":1, "crossSection": 0.006711,},
+    "wzp6_ee_munumuqq_ecm125":  {"fraction":1, "crossSection": 0.006711,},
+    "wzp6_ee_mumuqq_ecm125":  {"fraction":1, "crossSection": 0.006711,},
 
-    # "wzp6_ee_taunutauqq_ecm125":{"fraction":1, "crossSection": 0.006761,},
+    "wzp6_ee_taunutauqq_ecm125":{"fraction":1, "crossSection": 0.006761,},
 
 
-    # # Fully leptonic Processes
-    # "wzp6_ee_Htautau_ecm125" :  {"fraction":1, "crossSection" : 0.0001011 },
-    # "wzp6_ee_Hllnunu_ecm125":   {"fraction":1, "crossSection": 3.187e-5,},
+    # Fully leptonic Processes
+    "wzp6_ee_Htautau_ecm125" :  {"fraction":1, "crossSection" : 0.0001011 },
+    "wzp6_ee_Hllnunu_ecm125":   {"fraction":1, "crossSection": 3.187e-5,},
 
-    # "wzp6_ee_eenunu_ecm125":    {"fraction":1, "crossSection": 0.3364,},
-    # "wzp6_ee_mumununu_ecm125":  {"fraction":1, "crossSection": 0.2202,},
-    # "wzp6_ee_tautaununu_ecm125":{"fraction":1, "crossSection": 0.04265,},
-    # "wzp6_ee_l1l2nunu_ecm125":  {"fraction":1, "crossSection": 0.005799,},
-    # "wzp6_ee_tautau_ecm125" :   {"fraction":1, "crossSection" : 25.939},
+    "wzp6_ee_eenunu_ecm125":    {"fraction":1, "crossSection": 0.3364,},
+    "wzp6_ee_mumununu_ecm125":  {"fraction":1, "crossSection": 0.2202,},
+    "wzp6_ee_tautaununu_ecm125":{"fraction":1, "crossSection": 0.04265,},
+    "wzp6_ee_l1l2nunu_ecm125":  {"fraction":1, "crossSection": 0.005799,},
+    "wzp6_ee_tautau_ecm125" :   {"fraction":1, "crossSection" : 25.939},
 
-    # # Fully hadronic Processes
-    # "wzp6_ee_Hgg_ecm125":       {"fraction":1, "crossSection": 7.384e-5,},
-    # "wzp6_ee_Hbb_ecm125" :      {"fraction":1, "crossSection" : 0.001685},
+    # Fully hadronic Processes
+    "wzp6_ee_Hgg_ecm125":       {"fraction":1, "crossSection": 7.384e-5,},
+    "wzp6_ee_Hbb_ecm125" :      {"fraction":1, "crossSection" : 0.001685},
 
     "wzp6_ee_qq_ecm125":        {"fraction":1, "crossSection": 363.1,},
 
