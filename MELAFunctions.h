@@ -43,8 +43,8 @@ struct MELACalculator {
     TLorentzVector q11, q12, q21, q22;
     TVector3 boost1, boost2;
     double phi = 0, phi1 = 0, thetaStar = 0, phiStar = 0, theta1 = 0, theta2 = 0;
-    double CosPhiStar = 0, CosThetaStar = 0;
-    double cosphi = 0, cosphi1 = 0, costheta1 = 0, costheta2 = 0;
+    double cosPhiStar = 0, cosThetaStar = 0;
+    double cosPhi = 0, cosPhi1 = 0, cosTheta1 = 0, cosTheta2 = 0;
 
 
     MELACalculator() = default;
@@ -108,19 +108,19 @@ struct MELACalculator {
         TVector3 nsc = nz.Cross(q1.Vect()).Unit();
         
         phiStar = q1.Vect().Unit().Phi();
-        CosPhiStar = TMath::Cos(phiStar);
+        cosPhiStar = TMath::Cos(phiStar);
         phi = TMath::Cos(q1.Angle(n1.Cross(n2))) * TMath::ACos(-1 * n1.Dot(n2));
         phi1 = TMath::Cos(q1.Angle(n1.Cross(nsc))) * TMath::ACos(n1.Dot(nsc));
 
         thetaStar = q1.Vect().Unit().Theta();
-        CosThetaStar = TMath::Cos(thetaStar);
+        cosThetaStar = TMath::Cos(thetaStar);
         theta1 = TMath::ACos(-1*TMath::Cos(q2.Angle(q11.Vect())));
         theta2 = TMath::ACos(-1*TMath::Cos(q1.Angle(q21.Vect())));
       
-        cosphi = TMath::Cos(phi);
-        cosphi1 = TMath::Cos(phi1);
-        costheta1 = TMath::Cos(theta1);
-        costheta2 = TMath::Cos(theta2);
+        cosPhi = TMath::Cos(phi);
+        cosPhi1 = TMath::Cos(phi1);
+        cosTheta1 = TMath::Cos(theta1);
+        cosTheta2 = TMath::Cos(theta2);
 
 
         return *this;  // Allows method chaining
