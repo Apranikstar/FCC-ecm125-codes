@@ -1,3 +1,4 @@
+### use this if you want to run the steering file for all signals. 
 import re
 import csv
 import os
