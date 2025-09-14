@@ -1,15 +1,9 @@
 import os, copy
-#import numpy as np
-
-# --------------------------------------------------------------------------------------------------
-# We consider two levels in the first step: level 0 (for checking the plots), and level 1 (for the event pre-selection)
-# --------------------------------------------------------------------------------------------------
 
 
 # list of processes
 processList = {
     
-    #xsecs need to be scaled by 280/989 ...for xsec of ee -> H ...
 
     # Semileptonic processes
     "wzp6_ee_Henueqq_ecm125": {"fraction":1},
@@ -52,69 +46,42 @@ processList = {
     
 }
 
-# Production tag when running over EDM4Hep centrally produced events, this points to the yaml files for getting sample statistics (mandatory)
-#prodTag     = "FCCee/winter2023/IDEA/"
-
-#Optional: output directory, default is local running directory
 outputDir   = "./output/"
-# outputDirEos = "/eos/users/r/rjafaris" #helps the output to be visible in CERNbox (does not work!)
-
-# Define the input dir (optional)
-#inputDir    = "./localSamples/"
 inputDir    = "/eos/experiment/fcc/ee/generation/DelphesEvents/winter2023/IDEA"
 nCPUS       = -1
 
 # additional/costom C++ functions, defined in header files (optional)
-#includePaths = ["functions.h"]
 includePaths = ["../functions.h"]#, "MELAVar.h", "geo.h"]
 
 ## latest particle transformer model, trained on 9M jets in winter2023 samples
 model_name = "fccee_flavtagging_edm4hep_wc_v1"
-
-## model files needed for unit testing in CI
 url_model_dir = "https://fccsw.web.cern.ch/fccsw/testsamples/jet_flavour_tagging/winter2023/wc_pt_13_01_2022/"
 url_preproc = "{}/{}.json".format(url_model_dir, model_name)
 url_model = "{}/{}.onnx".format(url_model_dir, model_name)
-
-## model files locally stored on /eos
 model_dir = (
     "/eos/experiment/fcc/ee/jet_flavour_tagging/winter2023/wc_pt_13_01_2022/"
 )
 local_preproc = "{}/{}.json".format(model_dir, model_name)
 local_model = "{}/{}.onnx".format(model_dir, model_name)
-
-## get local file, else download from url
 def get_file_path(url, filename):
     if os.path.exists(filename):
         return os.path.abspath(filename)
     else:
         urllib.request.urlretrieve(url, os.path.basename(url))
         return os.path.basename(url)
-
-
 weaver_preproc = get_file_path(url_preproc, local_preproc)
 weaver_model = get_file_path(url_model, local_model)
-
 from addons.ONNXRuntime.jetFlavourHelper import JetFlavourHelper
 from addons.FastJet.jetClusteringHelper import (
     ExclusiveJetClusteringHelper,
 )
-
 jetFlavourHelper = None
 jetClusteringHelper = None
 
-# Mandatory: RDFanalysis class where the use defines the operations on the TTree
 class RDFanalysis:
 
- # ______________________________________________________________________________________________________				
-    # Mandatory: analysers funtion to define the analysers to process, please make sure you return the last dataframe, in this example it is df2
     def analysers(df):
 
- # ______________________________________________________________________________________________________				
-    # Mandatory: analysers funtion to define the analysers to process, please make sure you return the last dataframe, in this example it is df2
-
-    # define some aliases to be used later on
-    
         df = df.Alias("Particle0", "Particle#0.index")
         df = df.Alias("Particle1", "Particle#1.index")
         df = df.Alias("MCRecoAssociations0", "MCRecoAssociations#0.index")
@@ -123,9 +90,7 @@ class RDFanalysis:
         df = df.Alias("Muon0", "Muon#0.index")
         df = df.Alias("Photon0", "Photon#0.index")
         df = df.Alias("Jet2","Jet#2.index")  
- # ______________________________________________________________________________________________________				
-    # get all the leptons and photons from the ReconstructedParticles collection
-
+ # ______________________________________________________________________________________________________
         df = df.Define("electrons_all", "FCCAnalyses::ReconstructedParticle::get(Electron0, ReconstructedParticles)",)
         df = df.Define("muons_all", "FCCAnalyses::ReconstructedParticle::get(Muon0, ReconstructedParticles)",)
         df = df.Define("photons_all", "FCCAnalyses::ReconstructedParticle::get(Photon0, ReconstructedParticles)",)
@@ -139,14 +104,14 @@ class RDFanalysis:
  # ______________________________________________________________________________________________________
     # Isolation:
     
-        df = df.Define("electrons_iso", "FCCAnalyses::ZHfunctions::coneIsolation(0.01, 0.5)(electrons, ReconstructedParticles)",)
-        df = df.Define("electrons_sel_iso","FCCAnalyses::ZHfunctions::sel_iso(0.25)(electrons, electrons_iso)",)
+        df = df.Define("electrons_iso", "FCCAnalyses::ZHfunctions::coneIsolation(0.01, 0.2)(electrons, ReconstructedParticles)",)
+        df = df.Define("electrons_sel_iso","FCCAnalyses::ZHfunctions::sel_iso(0.2)(electrons, electrons_iso)",)
 
-        df = df.Define("muons_iso", "FCCAnalyses::ZHfunctions::coneIsolation(0.01, 0.5)(muons, ReconstructedParticles)",)
-        df = df.Define("muons_sel_iso","FCCAnalyses::ZHfunctions::sel_iso(0.25)(muons, muons_iso)",)
+        df = df.Define("muons_iso", "FCCAnalyses::ZHfunctions::coneIsolation(0.01, 0.2)(muons, ReconstructedParticles)",)
+        df = df.Define("muons_sel_iso","FCCAnalyses::ZHfunctions::sel_iso(0.2)(muons, muons_iso)",)
  
         df = df.Define("photons_iso", "FCCAnalyses::ZHfunctions::coneIsolation(0.01, 0.5)(photons, ReconstructedParticles)",)
-        df = df.Define("photons_sel_iso","FCCAnalyses::ZHfunctions::sel_iso(0.25)(photons, photons_iso)",)
+        df = df.Define("photons_sel_iso","FCCAnalyses::ZHfunctions::sel_iso(0.2)(photons, photons_iso)",)
 
     # electron variables:
         df = df.Define("IsoElectron_4p", "FCCAnalyses::ReconstructedParticle::get_tlv(electrons_sel_iso)",)
@@ -232,13 +197,7 @@ class RDFanalysis:
         df = df.Define("ecm125P", "(Jets_p4[0] + Jets_p4[1] + MissingE_4p[0] + IsoElectron_4p[0]).P()")
         df = df.Define("ecm125Pt", "(Jets_p4[0] + Jets_p4[1] + MissingE_4p[0] + IsoElectron_4p[0]).Pt()")
 
-
-        #-------------------------------------------------------------------
-        
-        #---------------------------------_______________________
-
         return df
-# __________________________________________________________
     # Mandatory: output function, please make sure you return the branchlist as a python list
     def output():
         branchList = [
