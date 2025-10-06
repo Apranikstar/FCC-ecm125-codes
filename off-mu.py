@@ -59,7 +59,7 @@ processList = {
 #prodTag     = "FCCee/winter2023/IDEA/"
 
 #Optional: output directory, default is local running directory
-outputDir   = "/eos/user/h/hfatehi/yukawaBDT/on-shell-muon/"
+outputDir   = "/eos/user/h/hfatehi/yukawaBDT/off-shell-muon/"
 # outputDirEos = "/eos/users/r/rjafaris" #helps the output to be visible in CERNbox (does not work!)
 
 # Define the input dir (optional)
