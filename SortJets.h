@@ -15,16 +15,10 @@
                  "FCCAnalyses::JetClusteringUtils::JetSorter::sort_jetconstituents_by_score(JetConstituents, JetScores)");
 */
 
-#include <vector>
-#include <stdexcept>
-#include <numeric>
-#include <algorithm>
-#include "ROOT/RVec.hxx"
-
 // If needed, include your FCCAnalysesJetConstituents definition
 // #include "FCCAnalysesJetConstituents.h"
 
-namespace FCCAnalyses { namespace JetClusteringUtils {
+namespace FCCAnalyses { namespace JetSortingUtils {
 
 struct JetSorter {
 
@@ -75,6 +69,6 @@ struct JetSorter {
   }
 };
 
-}} // namespace FCCAnalyses::JetClusteringUtils
+}} // namespace FCCAnalyses::JetSortingUtils
 
 #endif // SORTJETS_H
