@@ -8,18 +8,13 @@
 
   includePaths = ["functions.h","SortJets.h"]
 
-  df = df.Define("SortedJets", 
-                 "FCCAnalyses::JetUtils::JetSorter::sort_jets_by_score(Jets, JetScores)")
+  df = df.Define("SortedJets", f"FCCAnalyses::JetUtils::JetSorter::sort_jets_by_score({jetClusteringHelper.jets}, recojet_isTAU)")
+
 */
 
-// #include "SortJets.h"
-
-// df has columns "Jets" and "JetScores"
-//df = df.Define("SortedJets", f"FCCAnalyses::JetClusteringUtils::JetSorter::sort_jets_by_score({jetClusteringHelper.jets}, recojet_isTAU)")
 
 
-
-namespace FCCAnalyses { namespace JetSortingUtils {
+namespace FCCAnalyses { namespace JetUtils {
 
 struct JetSorter {
 
