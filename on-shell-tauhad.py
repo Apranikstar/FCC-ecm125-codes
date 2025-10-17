@@ -10,15 +10,15 @@ processList = {
     
     #xsecs need to be scaled by 280/989 ...for xsec of ee -> H ...
 
-    #Semileptonic processes
+    # #Semileptonic processes
     "wzp6_ee_Henueqq_ecm125":    {"fraction":1},
     "wzp6_ee_Hqqenue_ecm125":    {"fraction":1},
 
     "wzp6_ee_Hmunumuqq_ecm125":    {"fraction":1},
     "wzp6_ee_Hqqmunumu_ecm125":    {"fraction":1},
 
-     "wzp6_ee_Htaunutauqq_ecm125":    {"fraction":1, },
-     "wzp6_ee_Hqqtaunutau_ecm125":    {"fraction":1, },
+    "wzp6_ee_Htaunutauqq_ecm125":    {"fraction":1, },
+    "wzp6_ee_Hqqtaunutau_ecm125":    {"fraction":1, },
 
 
     "wzp6_ee_taunutauqq_ecm125":{"fraction":1},
@@ -59,7 +59,7 @@ outputDir   = "/eos/user/h/hfatehi/yukawaBDT/on-shell-THad/"
 
 inputDir    = "/eos/experiment/fcc/ee/generation/DelphesEvents/winter2023/IDEA"
 
-nCPUS       = -1
+nCPUS       = 64
 
 includePaths = ["functions.h", "GEOFunctions.h", "MELAFunctions.h", "SortJets.h"]
 
@@ -219,7 +219,7 @@ class RDFanalysis:
         #df = df.Define("Jets_charge", "JetConstituentsUtils::get_charge(SortedJetConstituents)",)
 
         df = df.Define("m_jj",  "(Jets_p4[1]+Jets_p4[2]).M()",)
-        df = df.Filter("m_jj < 80")
+        df = df.Filter("m_jj < 43")
         
         
         # MC event primary vertex---------------------------------------------------------
@@ -292,9 +292,6 @@ class RDFanalysis:
         df = df.Define("Min_JetsE", 
                "TMath::Min(Jets_p4[0].E(), TMath::Min(Jets_p4[1].E(), Jets_p4[2].E()))")
 
-        # df = df.Define("Jet1_charge", "ROOT::VecOps::Sum(Jets_charge[0])")
-        # df = df.Define("Jet2_charge", "ROOT::VecOps::Sum(Jets_charge[1])")
-        # df = df.Define("Jet3_charge", "ROOT::VecOps::Sum(Jets_charge[2])")
 
         # ------------------------------------------------------------------------
         # ΔR between jets
@@ -349,21 +346,6 @@ class RDFanalysis:
         df = df.Define("jjj_y", "(Jets_p4[0] + Jets_p4[1] + Jets_p4[2]).Rapidity()")
         df = df.Define("jjj_Phi", "(Jets_p4[0] + Jets_p4[1] + Jets_p4[2]).Phi()")
 
-
-        # # MELA Variables
-        # df = df.Define("mela","FCCAnalyses::MELA::MELACalculator::mela(Jets_p4[1],Jets_p4[2],MissingE_4p[0],Jets_p4[0], Jet1_charge,Jet2_charge,Jet3_charge)")     
-        # df = df.Define("Phi", " mela.phi")
-        # df = df.Define("CosPhi", " mela.cosPhi")
-        # df = df.Define("Phi1", " mela.phi1")
-        # df = df.Define("CosPhi1", " mela.cosPhi1")
-        # df = df.Define("PhiStar", " mela.phiStar")
-        # df = df.Define("CosPhiStar", " mela.cosPhiStar")
-        # df = df.Define("ThetaStar", " mela.thetaStar")
-        # df = df.Define("CosThetaStar", "mela.cosThetaStar")
-        # df = df.Define("Theta1", " mela.theta1")
-        # df = df.Define("Costheta1", " mela.cosTheta1")
-        # df = df.Define("Theta2", " mela.theta2")
-        # df = df.Define("Costheta2", " mela.cosTheta2")
         
         df = df.Define("Planarity","FCCAnalyses::GEOFunctions::EventGeoFunctions::calculatePlanarity(Jet2_P3,Jet3_P3,Jet1_P3)")
         df = df.Define("APlanarity","FCCAnalyses::GEOFunctions::EventGeoFunctions::calculateAplanarity(Jet2_P3,Jet3_P3,Jet1_P3)")
@@ -465,7 +447,7 @@ class RDFanalysis:
     "displacementdxy0",
     "displacementdz1",
     "displacementdxy1",
-    "m_jj",
+     "m_jj",
     "Jet1_P",
     "Jet1_Pt",
     "Jet1_Eta",
@@ -508,9 +490,6 @@ class RDFanalysis:
     "Min_JetsPT",
     "Max_JetsE",
     "Min_JetsE",
-    #"Jet1_charge",
-    #"Jet2_charge",
-    #"Jet3_charge",
     "Jets_delR12",
     "Jets_delR13",
     "Jets_delR23",
@@ -548,18 +527,6 @@ class RDFanalysis:
     "jjj_y",
     "jjj_Phi",
 
-    # "Phi",
-    # "CosPhi",
-    # "Phi1",
-    # "CosPhi1",
-    # "PhiStar",
-    # "CosPhiStar",
-    # "ThetaStar",
-    # "CosThetaStar",
-    # "Theta1",
-    # "Costheta1",
-    # "Theta2",
-    # "Costheta2",
 
     "Planarity",
     "APlanarity",
