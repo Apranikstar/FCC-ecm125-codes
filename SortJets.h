@@ -19,7 +19,7 @@
 
 
 
-namespace FCCAnalyses { namespace JetClusteringUtils {
+namespace FCCAnalyses { namespace JetSortingUtils {
 
 struct JetSorter {
 
