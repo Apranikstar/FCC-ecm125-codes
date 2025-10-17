@@ -54,6 +54,6 @@ struct JetSorter {
   }
 };
 
-}} // namespace FCCAnalyses::JetUtils
+}} // namespace FCCAnalyses::JetClusteringUtils
 
 #endif
