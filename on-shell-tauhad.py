@@ -59,7 +59,7 @@ outputDir   = "/eos/user/h/hfatehi/yukawaBDT/on-shell-THad/"
 
 inputDir    = "/eos/experiment/fcc/ee/generation/DelphesEvents/winter2023/IDEA"
 
-nCPUS       = 64
+nCPUS       = -1
 
 includePaths = ["functions.h", "GEOFunctions.h", "MELAFunctions.h", "SortJets.h"]
 
