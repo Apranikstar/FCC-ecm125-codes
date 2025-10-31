@@ -90,7 +90,7 @@ for process, group in df.groupby("process"):
     hist.GetYaxis().SetTitle("Reco-level events")
     hist.Write()
 
-    plt.figure(figsize=(6, 5))
+    plt.figure(figsize=(20, 22),dpi=300)
     plt.bar(bin_centers, reco_events, width=0.1, align='center', color='royalblue', alpha=0.7, edgecolor='black')
     plt.yscale("log")
     plt.xlabel("BDT Score")
