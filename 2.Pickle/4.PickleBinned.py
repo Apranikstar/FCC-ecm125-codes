@@ -10,7 +10,7 @@ print(f"✅ Loaded {len(df)} events from {input_pkl}")
 # Define initial cross sections and generated events per sample
 # (you can extend this dictionary)
 samples_info = {
-    "wzp6_ee_Henueqq_ecm125.root": {"cross_section_init": 0.41e-05, "n_gen": 1000000},
+    "wzp6_ee_Henueqq_ecm125.root": {"cross_section_init": 0.41e-05, "n_gen": 900000},
     "wzp6_ee_Hqqenue_ecm125.root": {"cross_section_init": 0.41e-05, "n_gen": 1000000},
 
     "wzp6_ee_Hmunumuqq_ecm125.root": {"cross_section_init": 0.41e-05, "n_gen": 1000000},
