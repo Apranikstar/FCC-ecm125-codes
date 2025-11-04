@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 # ------------------ INPUT ------------------
-input_pkl = "off-mu-bdt_binned_with_cross_sections.pkl"
+input_pkl = "bdt_distributions/bdt_binned_with_cross_sections.pkl"
 df = pd.read_pickle(input_pkl)
 
 signal_names = [
