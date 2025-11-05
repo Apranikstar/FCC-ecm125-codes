@@ -9,7 +9,7 @@ import csv
 # -----------------------------
 drmin = [0.01]
 drmax = [0.2, 0.4, 0.6, 0.8, 1.0]
-num_selection = 20
+num_selection = 5
 
 # Prepare list of args: [drmin, drmax, selection_array]
 args = []
