@@ -37,7 +37,7 @@ processList = {
 outputDir   = "./output"
 inputDir    = "/eos/experiment/fcc/ee/generation/DelphesEvents/winter2023/IDEA"
 nCPUS       = -1
-includePaths = ["functions.h"]
+includePaths = ["../functions.h"]
 
 jetFlavourHelper = None
 jetClusteringHelper = None
