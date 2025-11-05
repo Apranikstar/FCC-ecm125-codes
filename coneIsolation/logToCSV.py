@@ -45,7 +45,7 @@ def parse_reduction_factors(logfile, csv_out=None):
 
 
 if __name__ == "__main__":
-    logfile = "runscan.log"   # replace with your log filename
+    logfile = "scan.log"   # replace with your log filename
     results = parse_reduction_factors(logfile, csv_out="resultsCSVCone.csv")
     
     for run, entries in results.items():
