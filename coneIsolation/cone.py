@@ -22,10 +22,11 @@ selection = cfg.get("selection", 0.4)
 # -----------------------------
 
 processList = {
-    "wzp6_ee_Henueqq_ecm125": {"fraction":1},
+    "wzp6_ee_Henueqq_ecm125": {"fraction":0.1},
+    "wzp6_ee_qq_ecm125": {"fraction":0.1},
     # "wzp6_ee_Hqqenue_ecm125": {"fraction":1},
 
-    # "wzp6_ee_Hmunumuqq_ecm125": {"fraction":1},
+    # "wzp6_ee_Hmunumuqq_ecm125": {"fraction":0.1},
     # "wzp6_ee_Hqqmunumu_ecm125": {"fraction":1},
 
     # "wzp6_ee_Htaunutauqq_ecm125": {"fraction":1},
@@ -55,6 +56,8 @@ class RDFanalysis:
         df = df.Alias("Photon0", "Photon#0.index")
         df = df.Alias("Jet2","Jet#2.index")  
 
+
+        df = df.Define("ChargedHadrons", "ReconstructedParticle2MC::selRP_ChargedHadrons( MCRecoAssociations0,MCRecoAssociations1,ReconstructedParticles,Particle)")
         # Leptons
         df = df.Define("electrons_all", "FCCAnalyses::ReconstructedParticle::get(Electron0, ReconstructedParticles)")
         df = df.Define("muons_all", "FCCAnalyses::ReconstructedParticle::get(Muon0, ReconstructedParticles)")
@@ -64,7 +67,7 @@ class RDFanalysis:
         # Isolation using JSON-configurable parameters
         df = df.Define(
             "electrons_iso",
-            f"FCCAnalyses::ZHfunctions::coneIsolation({drmin}, {drmax})(electrons, ReconstructedParticles)"
+            f"FCCAnalyses::ZHfunctions::coneIsolation({drmin}, {drmax})(electrons, ChargedHadrons)" #ReconstructedParticles)"
         )
         df = df.Define(
             "electrons_sel_iso",
@@ -73,7 +76,7 @@ class RDFanalysis:
 
         df = df.Define(
             "muons_iso",
-            f"FCCAnalyses::ZHfunctions::coneIsolation({drmin}, {drmax})(muons, ReconstructedParticles)"
+            f"FCCAnalyses::ZHfunctions::coneIsolation({drmin}, {drmax})(muons, ChargedHadrons)" #ReconstructedParticles)"
         )
         df = df.Define(
             "muons_sel_iso",
@@ -84,8 +87,8 @@ class RDFanalysis:
         df = df.Define("IsoMuonNum", "muons_sel_iso.size()")
         df = df.Define("Iso_Electrons_No", "electrons_sel_iso.size()")
 
-        df = df.Filter("Iso_Electrons_No == 0")
-        df = df.Filter("IsoMuonNum == 0")
+        df = df.Filter("Iso_Electrons_No == 1  ")
+        #df = df.Filter("IsoMuonNum == 0")
 
         return df
 
