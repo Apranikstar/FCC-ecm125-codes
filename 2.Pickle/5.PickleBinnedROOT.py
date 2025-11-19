@@ -15,7 +15,7 @@ os.makedirs(output_dir, exist_ok=True)
 
 # ------------------ SAMPLE INFO ------------------
 samples_info = {
-    "wzp6_ee_Henueqq_ecm125.root": {"cross_section_init": 0.41e-05, "n_gen": 1000000},
+    "wzp6_ee_Henueqq_ecm125.root": {"cross_section_init": 0.41e-05, "n_gen": 900000},
     "wzp6_ee_Hqqenue_ecm125.root": {"cross_section_init": 0.41e-05, "n_gen": 1000000},
     "wzp6_ee_Hmunumuqq_ecm125.root": {"cross_section_init": 0.41e-05, "n_gen": 1000000},
     "wzp6_ee_Hqqmunumu_ecm125.root": {"cross_section_init": 0.41e-05, "n_gen": 1000000},
