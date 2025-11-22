@@ -12,7 +12,7 @@ input_pkl = "bdt_distributions/bdt_binned_with_cross_sections.pkl"
 df = pd.read_pickle(input_pkl)
 
 signal_names = [
-    #"wzp6_ee_Henueqq_ecm125.root",
+    "wzp6_ee_Henueqq_ecm125.root",
     "wzp6_ee_Htaunutauqq_ecm125.root"
 ]
 
